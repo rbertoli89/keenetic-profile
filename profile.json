@@ -1,0 +1,195 @@
+{
+  "version": "2.0.0",
+  "common": {
+    "config": [
+      {
+        "parse": [
+          "system clock timezone Europe/Rome",
+          "system schedule schedule0",
+          "system schedule schedule0 description auto-rescan",
+          "system schedule schedule0 action start 0 4 *",
+          "system schedule schedule0 action stop 0 6 *",
+          "ip icmp security-level public",
+          "interface WifiMaster0/AccessPoint0 auto-ssid mac4 'ChangeMe'_",
+          "interface WifiMaster0/AccessPoint0 country-code IT",
+          "interface WifiMaster0/AccessPoint0 encryption enable",
+          "interface WifiMaster0/AccessPoint0 encryption no wpa",
+          "interface WifiMaster0/AccessPoint0 encryption wpa2",
+          "interface WifiMaster0/AccessPoint0 encryption wpa3",
+          "interface WifiMaster0/AccessPoint0 channel auto-rescan schedule schedule0",
+          "ip dhcp pool _WEBADMIN",
+          "range 192.168.0.11 192.168.0.199",
+          "upnp lan Home",
+          "service upnp"
+          "interface PPPoE0",
+          "interface PPPoE0 description Provider",
+          "interface PPPoE0 role inet",
+          "interface PPPoE0 ipcp default-route",
+          "interface PPPoE0 ipcp dns-routes",
+          "interface PPPoE0 ipcp address",
+          "interface PPPoE0 security-level public",
+          "interface PPPoE0 authentication identity username",
+          "interface PPPoE0 authentication password 12345678_",
+          "interface PPPoE0 ip mtu 1492",
+          "interface PPPoE0 ip global order 0",
+          "interface PPPoE0 ip tcp adjust-mss pmtu",
+          "interface PPPoE0 ip name-servers",
+          "interface PPPoE0 ipv6 no name-servers",
+          "interface PPPoE0 connect via ISP",
+          "interface PPPoE0 up"
+        ]
+      }
+    ]
+  },
+  "profiles": {
+    "FTTC (VLAN 100)": {
+      "description": "IPoE VLAN 100 (DSL Port)",
+      "hwid": [
+        "KN-2111",
+        "KN-2410"
+      ],
+      "config": [
+        {
+          "parse": [
+            "interface WifiMaster1/AccessPoint0 follow WifiMaster0/AccessPoint0",
+            "interface WifiMaster1/AccessPoint0 band-steering"
+          ]
+        },
+        {
+          "interface": {
+            "Dsl0": {
+              "ipvc": {
+                "name": "Dsl0/Pvc0",
+                "parent": "Dsl0",
+                "role": "inet",
+                "vlan": "100"
+              },
+              "ip": {
+                "address": {
+                  "no": true
+                }
+              },
+              "operating-mode": {
+                "mode": "vdsl2-cpe"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "OpenFiber (VLNA 835)": {
+      "description": "IPoE VLAN 835 (WAN Port)",
+      "hwid": [
+        "KN-1711",
+        "KN-1713",
+        "KN-1810",
+        "KN-1811",
+        "KN-1910",
+        "KN-1912",
+        "KN-3010",
+        "KN-3012"
+      ],
+      "config": [
+        {
+          "parse": [
+            "interface WifiMaster1/AccessPoint0 follow WifiMaster0/AccessPoint0",
+            "interface WifiMaster1/AccessPoint0 band-steering"
+          ]
+        },
+        {
+          "interface": {
+            "ISP": {
+              "ipoe": {
+                "inet-port": "0",
+                "inet-vlan": "835"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "FiberCop (VLAN 100)": {
+      "description": "IPoE VLAN 100 (WAN Port)",
+      "hwid": [
+        "KN-1711",
+        "KN-1713",
+        "KN-1810",
+        "KN-1811",
+        "KN-1910",
+        "KN-1912",
+        "KN-3010",
+        "KN-3012"
+      ],
+      "config": [
+        {
+          "parse": [
+            "interface WifiMaster1/AccessPoint0 follow WifiMaster0/AccessPoint0",
+            "interface WifiMaster1/AccessPoint0 band-steering"
+          ]
+        },
+        {
+          "interface": {
+            "ISP": {
+              "ipoe": {
+                "inet-port": "0",
+                "inet-vlan": "100"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "MyISPConfig (VLAN [to be defined])": {
+      "description": "IPoE VLAN [to be defined] (WAN Port)",
+      "hwid": [
+        "KN-1711",
+        "KN-1713",
+        "KN-1810",
+        "KN-1811",
+        "KN-1910",
+        "KN-1912",
+        "KN-3010",
+        "KN-3012"
+      ],
+      "config": [
+        {
+          "parse": [
+            "interface WifiMaster1/AccessPoint0 follow WifiMaster0/AccessPoint0",
+            "interface WifiMaster1/AccessPoint0 band-steering"
+          ]
+        },
+        {
+          "interface": {
+            "ISP": {
+              "ipoe": {
+                "inet-port": "0",
+                "inet-vlan": "[to be defined]"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "MyISPConfig (NoVLAN)": {
+      "description": "IPoE no vLAN (WAN Port)",
+      "hwid": [
+        "KN-1711",
+        "KN-1713",
+        "KN-1810",
+        "KN-1811",
+        "KN-1910",
+        "KN-1912",
+        "KN-3010",
+        "KN-3012"
+      ],
+      "config": [
+        {
+          "parse": [
+            "interface WifiMaster1/AccessPoint0 follow WifiMaster0/AccessPoint0",
+            "interface WifiMaster1/AccessPoint0 band-steering"
+          ]
+        }
+      ]
+    }
+  }
+}
