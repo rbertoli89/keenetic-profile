@@ -10,7 +10,7 @@
           "system schedule schedule0 action start 0 4 *",
           "system schedule schedule0 action stop 0 6 *",
           "ip icmp security-level public",
-          "interface WifiMaster0/AccessPoint0 auto-ssid mac4 'ChangeMe'_",
+          "interface WifiMaster0/AccessPoint0 auto-ssid mac4 ChangeMe_",
           "interface WifiMaster0/AccessPoint0 country-code IT",
           "interface WifiMaster0/AccessPoint0 encryption enable",
           "interface WifiMaster0/AccessPoint0 encryption no wpa",
@@ -84,6 +84,7 @@
         "KN-1713",
         "KN-1810",
         "KN-1811",
+        "KN-1812",
         "KN-1910",
         "KN-1912",
         "KN-3010",
@@ -115,6 +116,7 @@
         "KN-1713",
         "KN-1810",
         "KN-1811",
+        "KN-1812",
         "KN-1910",
         "KN-1912",
         "KN-3010",
@@ -133,37 +135,6 @@
               "ipoe": {
                 "inet-port": "0",
                 "inet-vlan": "100"
-              }
-            }
-          }
-        }
-      ]
-    },
-    "MyISPConfig (VLAN [to be defined])": {
-      "description": "IPoE VLAN [to be defined] (WAN Port)",
-      "hwid": [
-        "KN-1711",
-        "KN-1713",
-        "KN-1810",
-        "KN-1811",
-        "KN-1910",
-        "KN-1912",
-        "KN-3010",
-        "KN-3012"
-      ],
-      "config": [
-        {
-          "parse": [
-            "interface WifiMaster1/AccessPoint0 follow WifiMaster0/AccessPoint0",
-            "interface WifiMaster1/AccessPoint0 band-steering"
-          ]
-        },
-        {
-          "interface": {
-            "ISP": {
-              "ipoe": {
-                "inet-port": "0",
-                "inet-vlan": "[to be defined]"
               }
             }
           }
