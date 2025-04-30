@@ -20,7 +20,7 @@
           "ip dhcp pool _WEBADMIN",
           "range 192.168.0.11 192.168.0.199",
           "upnp lan Home",
-          "service upnp"
+          "service upnp",
           "interface PPPoE0",
           "interface PPPoE0 description Provider",
           "interface PPPoE0 role inet",
