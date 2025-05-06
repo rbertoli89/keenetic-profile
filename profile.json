@@ -61,7 +61,7 @@
         }
       ]
     },
-    "OpenFiber (VLNA 835)": {
+    "OpenFiber (VLAN 835)": {
       "description": "IPoE VLAN 835 (WAN Port)",
       "hwid": [
         "KN-1711",
@@ -125,7 +125,7 @@
         }
       ]
     },
-    "MyISP (VLNA 835)": {
+    "MyISP (VLAN 835)": {
       "description": "PPPoE VLAN 835 (WAN Port)",
       "hwid": [
         "KN-1711",
@@ -160,16 +160,6 @@
             "interface PPPoE0 connect via ISP",
             "interface PPPoE0 up"
           ]
-        },
-        {
-          "interface": {
-            "ISP": {
-              "ipoe": {
-                "inet-port": "0",
-                "inet-vlan": "835"
-              }
-            }
-          }
         }
       ]
     },
