@@ -20,23 +20,7 @@
           "ip dhcp pool _WEBADMIN",
           "range 192.168.0.11 192.168.0.199",
           "upnp lan Home",
-          "service upnp",
-          "interface PPPoE0",
-          "interface PPPoE0 description Provider",
-          "interface PPPoE0 role inet",
-          "interface PPPoE0 ipcp default-route",
-          "interface PPPoE0 ipcp dns-routes",
-          "interface PPPoE0 ipcp address",
-          "interface PPPoE0 security-level public",
-          "interface PPPoE0 authentication identity username",
-          "interface PPPoE0 authentication password 12345678_",
-          "interface PPPoE0 ip mtu 1492",
-          "interface PPPoE0 ip global order 0",
-          "interface PPPoE0 ip tcp adjust-mss pmtu",
-          "interface PPPoE0 ip name-servers",
-          "interface PPPoE0 ipv6 no name-servers",
-          "interface PPPoE0 connect via ISP",
-          "interface PPPoE0 up"
+          "service upnp"
         ]
       }
     ]
@@ -135,6 +119,54 @@
               "ipoe": {
                 "inet-port": "0",
                 "inet-vlan": "100"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "MyISP (VLNA 835)": {
+      "description": "PPPoE VLAN 835 (WAN Port)",
+      "hwid": [
+        "KN-1711",
+        "KN-1713",
+        "KN-1810",
+        "KN-1811",
+        "KN-1812",
+        "KN-1910",
+        "KN-1912",
+        "KN-3010",
+        "KN-3012"
+      ],
+      "config": [
+        {
+          "parse": [
+            "interface WifiMaster1/AccessPoint0 follow WifiMaster0/AccessPoint0",
+            "interface WifiMaster1/AccessPoint0 band-steering",
+            "interface PPPoE0",
+            "interface PPPoE0 description Provider",
+            "interface PPPoE0 role inet",
+            "interface PPPoE0 ipcp default-route",
+            "interface PPPoE0 ipcp dns-routes",
+            "interface PPPoE0 ipcp address",
+            "interface PPPoE0 security-level public",
+            "interface PPPoE0 authentication identity username",
+            "interface PPPoE0 authentication password 12345678_",
+            "interface PPPoE0 ip mtu 1492",
+            "interface PPPoE0 ip global order 0",
+            "interface PPPoE0 ip tcp adjust-mss pmtu",
+            "interface PPPoE0 ip name-servers",
+            "interface PPPoE0 ipv6 no name-servers",
+            "interface PPPoE0 connect via ISP",
+            "interface PPPoE0 up"
+          ]
+        },
+        {
+          "interface": {
+            "ISP": {
+              "ipoe": {
+                "inet-port": "0",
+                "inet-vlan": "835"
               }
             }
           }
