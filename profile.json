@@ -18,7 +18,7 @@
           "interface WifiMaster0/AccessPoint0 encryption wpa3",
           "interface WifiMaster0/AccessPoint0 channel auto-rescan schedule schedule0",
           "ip dhcp pool _WEBADMIN",
-          "range 192.168.0.11 192.168.0.199",
+          "range 192.168.0.11 192.168.0.199"
         ]
       }
     ]
