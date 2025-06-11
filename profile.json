@@ -19,8 +19,6 @@
           "interface WifiMaster0/AccessPoint0 channel auto-rescan schedule schedule0",
           "ip dhcp pool _WEBADMIN",
           "range 192.168.0.11 192.168.0.199",
-          "upnp lan Home",
-          "service upnp"
         ]
       }
     ]
@@ -71,6 +69,7 @@
         "KN-1812",
         "KN-1910",
         "KN-1912",
+        "KN-2911",
         "KN-3010",
         "KN-3012"
       ],
@@ -103,6 +102,7 @@
         "KN-1812",
         "KN-1910",
         "KN-1912",
+        "KN-2911",
         "KN-3010",
         "KN-3012"
       ],
@@ -135,6 +135,7 @@
         "KN-1812",
         "KN-1910",
         "KN-1912",
+        "KN-2911",
         "KN-3010",
         "KN-3012"
       ],
@@ -172,6 +173,7 @@
         "KN-1811",
         "KN-1910",
         "KN-1912",
+        "KN-2911",
         "KN-3010",
         "KN-3012"
       ],
